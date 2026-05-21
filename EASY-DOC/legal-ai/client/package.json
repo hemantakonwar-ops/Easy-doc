@@ -1,0 +1,53 @@
+{
+  "name": "legal-ai-client",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "setup": "npm install",
+    "clean": "rimraf .next node_modules package-lock.json",
+    "fresh": "npm run clean && npm install",
+    "dev:3000": "next dev -p 3000",
+    "dev:3001": "next dev -p 3001",
+    "port:clear": "npx kill-port 3000 3001 3002 3003",
+    "port:3000": "npx kill-port 3000",
+    "port:3001": "npx kill-port 3001",
+    "check:ports": "npx list-open-ports",
+    "all": "npm run setup && npm run dev",
+    "prod": "npm run build && npm start"
+  },
+  "dependencies": {
+    "next": "14.2.28",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "axios": "^1.7.0",
+    "zustand": "^4.5.0",
+    "@tanstack/react-query": "^5.40.0",
+    "lucide-react": "^0.378.0",
+    "jspdf": "^2.5.1",
+    "html2canvas": "^1.4.1",
+    "react-pdf": "^9.0.0",
+    "date-fns": "^3.6.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.3.0",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@radix-ui/react-avatar": "^1.0.4",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-tooltip": "^1.0.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/react": "^18.3.0",
+    "@types/node": "^20.12.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.28",
+    "tailwindcss": "^3.4.3",
+    "postcss": "^8.4.38",
+    "autoprefixer": "^10.4.19",
+    "rimraf": "^5.0.0",
+    "kill-port": "^2.0.1"
+  }
+}

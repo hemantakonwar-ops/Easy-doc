@@ -1,0 +1,34 @@
+{
+  "name": "legal-ai-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Legal AI - Root package.json for managing all services",
+  "scripts": {
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install",
+    "install:nlp": "cd nlp-service && pip install -r requirements.txt",
+    "install:all": "npm run install:nlp && npm run install:server && npm run install:client",
+    "setup": "npm run install:all",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "dev:nlp": "cd nlp-service && python -m uvicorn app.main:app --reload --port 8000",
+    "dev:all": "npm run dev:nlp & npm run dev:server & npm run dev:client & wait",
+    "start:all": "npm run dev:all",
+    "build:client": "cd client && npm run build",
+    "build:all": "npm run build:client",
+    "clean:client": "cd client && rimraf .next node_modules package-lock.json",
+    "clean:server": "cd server && rimraf node_modules package-lock.json",
+    "clean:all": "npm run clean:client && npm run clean:server",
+    "fresh": "npm run clean:all && npm run install:all",
+    "port:clear": "npx kill-port 3000 5000 8000",
+    "check:ports": "npx list-open-ports"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "kill-port": "^2.0.1",
+    "rimraf": "^5.0.0"
+  },
+  "dependencies": {
+    "form-data": "^4.0.5"
+  }
+}

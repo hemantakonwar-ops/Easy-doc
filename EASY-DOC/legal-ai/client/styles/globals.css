@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* VS Code Dark Theme Colors */
+  --vscode-bg: #1e1e1e;
+  --vscode-sidebar: #252526;
+  --vscode-activity: #181818;
+  --vscode-border: #2d2d2d;
+  --vscode-text: #d4d4d4;
+  --vscode-text-muted: #858585;
+  --vscode-accent: #007acc;
+  --vscode-accent-hover: #1177bb;
+  --vscode-selection: #264f78;
+  --vscode-hover: #2a2d2e;
+  --vscode-input: #3c3c3c;
+  --vscode-error: #f48771;
+  --vscode-warning: #cca700;
+  --vscode-success: #89d185;
+
+  /* Search Highlight - Lime Green */
+  --search-highlight: #32CD32;
+  --search-highlight-bg: rgba(50, 205, 50, 0.15);
+
+  /* Legacy editorial accents (minimal retention) */
+  --editorial-gold: #a77a35;
+
+  /* Kept for compatibility during transition */
+  --foreground-rgb: 212, 212, 212;
+  --background-rgb: 30, 30, 30;
+}
+
+body {
+  color: var(--vscode-text);
+  background: var(--vscode-bg);
+  font-feature-settings: "kern";
+  transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.8s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.8s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::selection {
+  background: var(--vscode-selection);
+  color: var(--vscode-text);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-editorial {
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+
+  .editorial-shell {
+    background: var(--vscode-bg);
+    color: var(--vscode-text);
+  }
+
+  .editorial-card {
+    background: var(--vscode-sidebar);
+    border: 1px solid var(--vscode-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .editorial-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid var(--vscode-accent);
+    background: var(--vscode-accent);
+    color: white;
+    padding: 0.75rem 1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+  }
+
+  .editorial-button:hover {
+    transform: translateY(-1px);
+    background: var(--vscode-accent-hover);
+    border-color: var(--vscode-accent-hover);
+  }
+
+  .editorial-button-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid var(--vscode-border);
+    background: var(--vscode-hover);
+    color: var(--vscode-text);
+    padding: 0.75rem 1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: border-color 180ms ease, background-color 180ms ease;
+  }
+
+  .editorial-button-light:hover {
+    border-color: var(--vscode-accent);
+    background: var(--vscode-sidebar);
+  }
+
+  .editorial-label {
+    color: var(--vscode-text-muted);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* VS Code Theme Utilities */
+  .vscode-bg { background-color: var(--vscode-bg); }
+  .vscode-sidebar { background-color: var(--vscode-sidebar); }
+  .vscode-activity { background-color: var(--vscode-activity); }
+  .vscode-border { border-color: var(--vscode-border); }
+  .vscode-text { color: var(--vscode-text); }
+  .vscode-text-muted { color: var(--vscode-text-muted); }
+  .vscode-accent { background-color: var(--vscode-accent); }
+  .vscode-accent-text { color: var(--vscode-accent); }
+  .vscode-hover:hover { background-color: var(--vscode-hover); }
+  .vscode-input { background-color: var(--vscode-input); }
+  .search-highlight { background-color: var(--search-highlight); }
+}

@@ -1,0 +1,15 @@
+# Processed tracking
+processed.json
+training.log
+
+# Raw data files (too large for git)
+raw/**/*.pdf
+raw/**/*.docx
+raw/**/*.json
+raw/**/*.txt
+
+# Keep directory structure
+!raw/
+!raw/contracts/.gitkeep
+!raw/legal_docs/.gitkeep
+!raw/case_law/.gitkeep
